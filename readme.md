@@ -203,7 +203,19 @@ This work builds upon and extends the foundational research of **[Dr. Andrea Del
 2. **A. Delbene and M. Baglietto**, "Recovery techniques for a multi-UAV system transporting a payload," *Proc. 2024 IEEE 20th Int. Conf. on Automation Science and Engineering (CASE)*, pp. 559–566, IEEE, 2024.  
    [🔗 IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/10711746)
 
+
 ---
+
+## 📜 License and Authorship
+
+This repository contains mixed academic material:
+
+- **Simulation Framework**: Provided for thesis research purposes. Copyright remains with the respective original authors.
+
+- **NMPC Controller Implementation** (MATLAB and C++): Including fault-tolerant logic and adaptive weight tuning — original work by **Alvin Isac** (2026), licensed under the **MIT License**.
+
+---
+
 
 ## 📧 Contact details
 
