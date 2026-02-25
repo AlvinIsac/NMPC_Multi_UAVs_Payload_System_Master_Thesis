@@ -1,0 +1,11 @@
+# service transferring information about the current failure info
+# above the lines goes the request, below the response
+
+int8 curr_state
+float64 x
+float64 y
+float64 z
+float64[22] params
+float64[33] ctrl_params
+---
+bool response

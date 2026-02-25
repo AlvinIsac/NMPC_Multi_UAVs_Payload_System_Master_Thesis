@@ -1,0 +1,1230 @@
+<?xml version='1.0' ?>
+<sdf version='1.7'>
+    <model name='rod_uav'>
+        <!-- basic idea: create a rod as a linked serie of cylinders -->
+        <link name='first_cylinder'>
+            <pose>0 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the first cylinder object -->
+            <collision name='first_cylinder_inertia_collision'>
+                <pose>0 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='first_cylinder_inertia_visual'>
+                <pose>0 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- second cylinder -->
+        <link name='second_cylinder'>
+            <pose>0.075 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the second cylinder object -->
+            <collision name='second_cylinder_inertia_collision'>
+                <pose>0.075 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='second_cylinder_inertia_visual'>
+                <pose>0.075 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- third cylinder -->
+        <link name='third_cylinder'>
+            <pose>0.15 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the third cylinder object -->
+            <collision name='third_cylinder_inertia_collision'>
+                <pose>0.15 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='third_cylinder_inertia_visual'>
+                <pose>0.15 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- fourth cylinder -->
+        <link name='fourth_cylinder'>
+            <pose>0.225 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the fourth cylinder object -->
+            <collision name='fourth_cylinder_inertia_collision'>
+                <pose>0.225 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='fourth_cylinder_inertia_visual'>
+                <pose>0.225 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- fifth cylinder -->
+        <link name='fifth_cylinder'>
+            <pose>0.3 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the fifth cylinder object -->
+            <collision name='fifth_cylinder_inertia_collision'>
+                <pose>0.3 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='fifth_cylinder_inertia_visual'>
+                <pose>0.3 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- sixth cylinder -->
+        <link name='sixth_cylinder'>
+            <pose>0.375 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the sixth cylinder object -->
+            <collision name='sixth_cylinder_inertia_collision'>
+                <pose>0.375 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='sixth_cylinder_inertia_visual'>
+                <pose>0.375 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- seventh cylinder -->
+        <link name='seventh_cylinder'>
+            <pose>0.45 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the seventh cylinder object -->
+            <collision name='seventh_cylinder_inertia_collision'>
+                <pose>0.45 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='seventh_cylinder_inertia_visual'>
+                <pose>0.45 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- eighth cylinder -->
+        <link name='eighth_cylinder'>
+            <pose>0.525 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the eighth cylinder object -->
+            <collision name='eighth_cylinder_inertia_collision'>
+                <pose>0.525 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='eighth_cylinder_inertia_visual'>
+                <pose>0.525 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- nineth cylinder -->
+        <link name='nineth_cylinder'>
+            <pose>0.6 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the nineth cylinder object -->
+            <collision name='nineth_cylinder_inertia_collision'>
+                <pose>0.6 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='nineth_cylinder_inertia_visual'>
+                <pose>0.6 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- tenth cylinder -->
+        <link name='tenth_cylinder'>
+            <pose>0.675 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the tenth cylinder object -->
+            <collision name='tenth_cylinder_inertia_collision'>
+                <pose>0.675 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='tenth_cylinder_inertia_visual'>
+                <pose>0.675 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- eleventh cylinder -->
+        <link name='eleventh_cylinder'>
+            <pose>0.75 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the eleventh cylinder object -->
+            <collision name='eleventh_cylinder_inertia_collision'>
+                <pose>0.75 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='eleventh_cylinder_inertia_visual'>
+                <pose>0.75 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- twelfth cylinder -->
+        <link name='twelfth_cylinder'>
+            <pose>0.825 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the twelfth cylinder object -->
+            <collision name='twelfth_cylinder_inertia_collision'>
+                <pose>0.825 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='twelfth_cylinder_inertia_visual'>
+                <pose>0.825 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- thirteenth cylinder -->
+        <link name='thirteenth_cylinder'>
+            <pose>0.9 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the thirteenth cylinder object -->
+            <collision name='thirteenth_cylinder_inertia_collision'>
+                <pose>0.9 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='thirteenth_cylinder_inertia_visual'>
+                <pose>0.9 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- fourteenth cylinder -->
+        <link name='fourteenth_cylinder'>
+            <pose>0.975 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the fourteenth cylinder object -->
+            <collision name='fourteenth_cylinder_inertia_collision'>
+                <pose>0.975 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='fourteenth_cylinder_inertia_visual'>
+                <pose>0.975 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- fifteenth cylinder -->
+        <link name='fifteenth_cylinder'>
+            <pose>1.05 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the fifteenth cylinder object -->
+            <collision name='fifteenth_cylinder_inertia_collision'>
+                <pose>1.05 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='fifteenth_cylinder_inertia_visual'>
+                <pose>1.05 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- sixteenth cylinder -->
+        <link name='sixteenth_cylinder'>
+            <pose>1.125 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the sixteenth cylinder object -->
+            <collision name='sixteenth_cylinder_inertia_collision'>
+                <pose>1.125 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='sixteenth_cylinder_inertia_visual'>
+                <pose>1.125 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- seventeenth cylinder -->
+        <link name='seventeenth_cylinder'>
+            <pose>1.2 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the seventeenth cylinder object -->
+            <collision name='seventeenth_cylinder_inertia_collision'>
+                <pose>1.2 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='seventeenth_cylinder_inertia_visual'>
+                <pose>1.2 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- eighteenth cylinder -->
+        <link name='eighteenth_cylinder'>
+            <pose>1.275 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the eighteenth cylinder object -->
+            <collision name='eighteenth_cylinder_inertia_collision'>
+                <pose>1.275 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='eighteenth_cylinder_inertia_visual'>
+                <pose>1.275 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- nineteenth cylinder -->
+        <link name='nineteenth_cylinder'>
+            <pose>1.35 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the nineteenth cylinder object -->
+            <collision name='nineteenth_cylinder_inertia_collision'>
+                <pose>1.35 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='nineteenth_cylinder_inertia_visual'>
+                <pose>1.35 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- twentieth cylinder -->
+        <link name='twentieth_cylinder'>
+            <pose>1.425 0 0.005 0 0 0</pose>
+            <inertial>
+                <!-- the overall weight of the rod is N, divided by the number of the cylinders and
+                gravity, it gives the mass-->
+                <mass>1.020000</mass>
+                <inertia>
+                    <ixx>0.00047812</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00047812</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00047812</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the twentieth cylinder object -->
+            <collision name='twentieth_cylinder_inertia_collision'>
+                <pose>1.425 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+                            <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='twentieth_cylinder_inertia_visual'>
+                <pose>1.425 0 0.005 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.075</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+            <velocity_decay/>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+
+    </model>
+</sdf>

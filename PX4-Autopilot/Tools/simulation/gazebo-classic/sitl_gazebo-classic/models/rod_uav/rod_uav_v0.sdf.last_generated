@@ -1,0 +1,817 @@
+<?xml version='1.0' ?>
+<sdf version='1.7'>
+    <model name='rod_uav'>
+        <!-- Idea: creating an almost null-mass and dimension cylinder for a joint to be measured -->
+        <link name='fake_cylinder'>
+            <pose>0 0 0.005 0 1.57 0</pose>
+			<inertial>
+                <mass>0.00714285</mass>
+                <inertia>
+                    <ixx>0.00000024</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00000024</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00000024</izz>
+                </inertia>
+            </inertial>
+
+            <collision name='fake_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.01</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='fake_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.01</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+        <!-- basic idea: create a rod as a linked serie of cylinders -->
+        <link name='first_cylinder'>
+            <pose>0.12 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the first cylinder object -->
+            <collision name='first_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='first_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- second cylinder -->
+        <link name='second_cylinder'>
+            <pose>0.344 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the second cylinder object -->
+            <collision name='second_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='second_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- third cylinder -->
+        <link name='third_cylinder'>
+            <pose>0.568 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the third cylinder object -->
+            <collision name='third_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='third_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- fourth cylinder -->
+        <link name='fourth_cylinder'>
+            <pose>0.792 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the fourth cylinder object -->
+            <collision name='fourth_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='fourth_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- fifth cylinder -->
+        <link name='fifth_cylinder'>
+            <pose>1.016 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the fifth cylinder object -->
+            <collision name='fifth_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='fifth_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- sixth cylinder -->
+        <link name='sixth_cylinder'>
+            <pose>1.240 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the sixth cylinder object -->
+            <collision name='sixth_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='sixth_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- seventh cylinder -->
+        <link name='seventh_cylinder'>
+            <pose>1.464 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the seventh cylinder object -->
+            <collision name='seventh_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='seventh_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- eighth cylinder -->
+        <link name='eighth_cylinder'>
+            <pose>1.688 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.028571429</mass>
+                <inertia>
+                    <ixx>0.000436152</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.000436152</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.000436152</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the eighth cylinder object -->
+            <collision name='eighth_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='eighth_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.214</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- last cylinder, contact point with the payload -->
+        <link name='payload_cylinder'>
+            <pose>1.83 0 0.005 0 1.57 0</pose>
+            <inertial>
+                <mass>0.00714285</mass>
+                <inertia>
+                    <ixx>0.00000595</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00000595</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00000595</izz>
+                </inertia>
+            </inertial>
+
+            <!-- creating the payload cylinder object -->
+            <collision name='payload_cylinder_inertia_collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.05</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             				<min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+                        <ode/>
+                    </friction>
+                </surface>
+            </collision>
+
+            <!-- and the visual -->
+            <visual name='payload_cylinder_inertia_visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.05</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+        <static>false</static>
+
+        <!-- /////////////////////////////////////////////////////////////////////// -->
+
+        <!-- joints -->
+        <joint name="rod_uav_joint_1" type="revolute">
+		    <pose>
+		        0 0 -0.112 0 -1.57 0
+		    </pose>
+		    <child>first_cylinder</child>
+		    <parent>fake_cylinder</parent>
+		    <axis>
+		        <limit>
+		            <lower>-3.14</lower>
+		            <upper>1.57</upper>
+		        </limit>
+		        <xyz>0 1 0</xyz>
+		    </axis>
+		    <physics>
+				<friction> 0.05 </friction>
+		    	<provide_feedback>true</provide_feedback>
+			</physics>
+		</joint>
+		
+        <joint name="joint_1_2" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>second_cylinder</child>
+            <parent>first_cylinder</parent>
+            <axis>
+                <limit>
+                    <!--<lower>-0.175</lower>
+                    <upper>0.175</upper>-->
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+
+         <joint name="joint_2_3" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>third_cylinder</child>
+            <parent>second_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+
+        <joint name="joint_3_4" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>fourth_cylinder</child>
+            <parent>third_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+
+        <joint name="joint_4_5" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>fifth_cylinder</child>
+            <parent>fourth_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+
+        <joint name="joint_5_6" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>sixth_cylinder</child>
+            <parent>fifth_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+
+        <joint name="joint_6_7" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>seventh_cylinder</child>
+            <parent>sixth_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <!--<lower>-0.35</lower>
+                    <upper>0.35</upper>-->
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+        
+        <joint name="joint_7_8" type="revolute2">
+            <pose>
+                0 0 -0.112 0 -1.57 0
+            </pose>
+            <child>eighth_cylinder</child>
+            <parent>seventh_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <!--<lower>-0.35</lower>
+                    <upper>0.35</upper>-->
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+        <joint name="joint_8_p" type="revolute2">
+            <pose>
+                0 0 -0.03 0 -1.57 0
+            </pose>
+            <child>payload_cylinder</child>
+            <parent>eighth_cylinder</parent>
+            <axis>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 1 0</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis>
+            <axis2>
+                <limit>
+                    <!--<lower>-0.175</lower>
+                    <upper>0.175</upper>-->
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <friction> 0.05 </friction>
+                </dynamics>
+            </axis2>
+        </joint>
+
+    </model>
+</sdf>

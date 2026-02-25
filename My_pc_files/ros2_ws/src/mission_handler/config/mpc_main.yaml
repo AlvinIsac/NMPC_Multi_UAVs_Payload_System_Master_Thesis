@@ -1,0 +1,73 @@
+uav_position_mpc_controller:
+  ros__parameters:
+
+    # =========================
+    # Rigid body parameters
+    # =========================
+    M:    2.2
+    Ixx:  0.022
+    Iyy:  0.022
+    Izz:  0.04
+
+    # =========================
+    # MPC grid (sampling & horizon)
+    # =========================
+    dt: 0.02      # [s] (50 Hz)
+    N:  10        # prediction horizon
+
+    # =========================
+    # Control limits
+    # =========================
+    T_MIN: -34.0
+    T_MAX: -20.0
+
+    TAU_ROLL_MIN:   -0.15
+    TAU_ROLL_MAX:    0.15
+
+    TAU_PITCH_MIN:  -0.15
+    TAU_PITCH_MAX:   0.15
+
+    TAU_YAW_MIN:   -0.015
+    TAU_YAW_MAX:    0.015
+
+    # =========================
+    # Angle bounds
+    # =========================
+    PHI_MAX:   0.785398   # ≈ pi/4
+    THETA_MAX: 0.785398   # ≈ pi/4
+    PSI_MAX:   3.14159    # ≈ pi
+
+    # =========================
+    # State weights
+    # =========================
+    w_pn: 0.0
+    w_vn: 0.2
+
+    w_pe: 0.0
+    w_ve: 0.2
+
+    w_pd: 10.0
+    w_vd: 8.0
+
+    w_phi:       6.0
+    w_phi_dot:   1.5
+    w_theta:     6.0
+    w_theta_dot: 1.5
+    w_psi:       0.2
+    w_psi_dot:   0.1
+
+    # =========================
+    # Control effort weights
+    # =========================
+    w_u_t:         0.8
+    w_u_tau_roll:  0.4
+    w_u_tau_pitch: 0.4
+    w_u_tau_yaw:   0.1
+
+    # =========================
+    # Control rate (Δu) weights
+    # =========================
+    w_du_t:         15.0
+    w_du_tau_roll:  10.0
+    w_du_tau_pitch: 10.0
+    w_du_tau_yaw:   5.0

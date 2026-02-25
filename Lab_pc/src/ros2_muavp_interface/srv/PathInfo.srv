@@ -1,0 +1,8 @@
+# service transferring information about the current failure info
+# above the lines goes the request, below the response
+
+int8 curr_state
+float64[22] params
+string[33] traj_type
+---
+bool response

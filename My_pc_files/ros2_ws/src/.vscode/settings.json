@@ -1,0 +1,14 @@
+{
+    "cmake.sourceDirectory": "/home/ubuntu/ros2_ws/src/mission_handler",
+    "python.autoComplete.extraPaths": [
+        "/home/ubuntu/ros2_ws/install/ros2_muavp_interface/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/ubuntu/ros2_ws/install/ros2_muavp_interface/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "ros.distro": "humble"
+}

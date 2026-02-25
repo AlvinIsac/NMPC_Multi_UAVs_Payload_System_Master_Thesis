@@ -1,0 +1,54 @@
+#####
+#
+# This file maps all the topics that are to be used on the uXRCE-DDS client.
+#
+#####
+publications:
+
+  - topic: /fmu/out/actuator_armed
+    type: px4_msgs::msg::ActuatorArmed
+
+  - topic: /fmu/out/battery_status
+    type: px4_msgs::msg::BatteryStatus
+
+  - topic: /fmu/out/vehicle_control_mode
+    type: px4_msgs::msg::VehicleControlMode
+
+  - topic: /fmu/out/vehicle_odometry
+    type: px4_msgs::msg::VehicleOdometry
+
+  - topic: /fmu/out/vehicle_status
+    type: px4_msgs::msg::VehicleStatus
+
+  - topic: /fmu/out/sensor_gps
+    type: px4_msgs::msg::SensorGps
+
+# Create uORB::Publication
+subscriptions:
+  # - topic: /fmu/in/actuator_motors
+  #   type: px4_msgs::msg::ActuatorMotors
+
+  - topic: /fmu/in/vehicle_thrust_setpoint
+    type: px4_msgs::msg::VehicleThrustSetpoint
+
+  - topic: /fmu/in/vehicle_torque_setpoint
+    type: px4_msgs::msg::VehicleTorqueSetpoint
+
+  - topic: /fmu/in/offboard_control_mode
+    type: px4_msgs::msg::OffboardControlMode
+
+  - topic: /fmu/in/trajectory_setpoint
+    type: px4_msgs::msg::TrajectorySetpoint
+
+  - topic: /fmu/in/vehicle_command
+    type: px4_msgs::msg::VehicleCommand
+
+  - topic: /fmu/in/vehicle_local_position_setpoint
+    type: px4_msgs::msg::VehicleLocalPositionSetpoint
+
+# Create uORB::PublicationMulti
+subscriptions_multi:
+  #
+  # - topic: /fmu/in/trajectory_setpoint
+  #   base: /fmu/in/vehicle_local_position_setpoint
+  #   type: px4_msgs::msg::VehicleLocalPositionSetpoint

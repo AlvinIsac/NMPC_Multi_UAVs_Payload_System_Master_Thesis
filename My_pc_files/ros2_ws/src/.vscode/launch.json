@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug MPC Node",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/install/mission_handler/lib/mission_handler/mpc_failure_handler_node",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        {
+          "name": "AMENT_PREFIX_PATH",
+          "value": "/opt/ros/humble:${workspaceFolder}/install"
+        },
+        {
+          "name": "LD_LIBRARY_PATH",
+          "value": "/opt/ros/humble/lib:/home/ubuntu/casadi/install/lib:${workspaceFolder}/install/mission_handler/lib:${workspaceFolder}/install/ros2_muavp_interface/lib:${workspaceFolder}/install/lib"
+        },
+        {
+          "name": "PYTHONPATH",
+          "value": "/opt/ros/humble/lib/python3.10/site-packages"
+        },
+        {
+          "name": "ROS_PACKAGE_PATH",
+          "value": "${workspaceFolder}/src"
+        }
+      ],
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "colcon build",
+      "externalConsole": false
+    }
+  ]
+}

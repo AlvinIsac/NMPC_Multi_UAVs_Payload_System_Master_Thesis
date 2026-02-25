@@ -1,0 +1,72 @@
+export LD_LIBRARY_PATH=$HOME/casadi/install/lib:$LD_LIBRARY_PATH
+source ~/ros2_ws/install/setup.bash
+
+save() {
+  cwd=$(pwd)  # Save current directory
+  cd ~/ros2_ws/src/mission_handler || return
+  git add .
+  git commit -m "$*"
+  git push
+  cd "$cwd"   # Go back to original directory
+}
+alias cc='cd ~/ros2_ws && source install/setup.bash'
+
+alias pp='cd ~/ros_ws && ros2 topic echo /payload/pose | tee payload_pose_log.txt'
+alias i1='ros2 topic echo /x500_1/input_setpoint'
+alias i2='ros2 topic echo /x500_2/input_setpoint'
+alias i3='ros2 topic echo /x500_3/input_setpoint'
+alias h1='ros2 topic hz /x500_1/input_setpoint --window 1'
+alias h11='ros2 topic hz /x500_1/input_setpoint_ --window 1'
+alias h2='ros2 topic hz /x500_2/input_setpoint --window 1'
+alias h22='ros2 topic hz /x500_2/input_setpoint_ --window 1'
+alias h3='ros2 topic hz /x500_3/input_setpoint --window 1'
+alias h33='ros2 topic hz /x500_3/input_setpoint_ --window 1'
+
+alias g='gedit ~/.bashrc'
+alias p1='ros2 topic echo /x500_1/pose'
+alias p2='ros2 topic echo /x500_2/pose'
+alias p3='ros2 topic echo /x500_3/pose'
+alias pl1='cd ~/ros2_ws && ros2 topic echo /x500_1/pose | tee x500_1_pose_log.txt'
+alias pl2='cd ~/ros2_ws && ros2 topic echo /x500_2/pose | tee x500_2_pose_log.txt'
+alias pl3='cd ~/ros2_ws && ros2 topic echo /x500_3/pose | tee x500_3_pose_log.txt'
+alias il1='cd ~/ros2_ws && ros2 topic echo /x500_1/input_setpoint | tee x500_1_input_log.txt'
+alias il2='cd ~/ros2_ws && ros2 topic echo /x500_2/input_setpoint | tee x500_2_input_log.txt'
+alias il3='cd ~/ros2_ws && ros2 topic echo /x500_3/input_setpoint | tee x500_3_input_log.txt'
+alias r2='cd ~/ros2_ws && ros2 topic echo /x500_2/rod_force_torque | tee x500_2_rod_force_log.txt'
+alias r3='cd ~/ros2_ws && ros2 topic echo /x500_3/rod_force_torque | tee x500_3_rod_force_log.txt'
+
+alias sil1='cd ~/graph && python3 il1.py'
+alias sil2='cd ~/graph && python3 il2.py'
+alias sil3='cd ~/graph && python3 il3.py'
+alias ssil3='cd ~/graph && python3 special_il3.py'
+alias ssil2='cd ~/graph && python3 special_il2.py'
+
+alias spl1='cd ~/graph && python3 pl1.py'
+alias spl2='cd ~/graph && python3 pl2.py'
+alias spl3='cd ~/graph && python3 pl3.py'
+alias spp='cd ~/graph && python3 pp.py'
+alias sr2='cd ~/graph && python3 r2.py'
+alias sr3='cd ~/graph && python3 r3.py'
+
+alias m='cc && ros2 run mission_handler mpc_main_30_states_node | tee Newcost.txt'
+alias i='cc && ros2 run mission_handler input_setpoint_booster_node'
+
+alias fail1='ros2 topic pub /agents/failure_check ros2_muavp_interface/msg/FailureCheck \
+"{uav_1_failed: true, uav_2_failed: false, uav_3_failed: false}" --rate 1'
+
+alias faila='ros2 topic pub /agents/failure_check ros2_muavp_interface/msg/FailureCheck \
+"{uav_1_failed: true, uav_2_failed: true, uav_3_failed: true}" --rate 1'
+
+
+
+#export ROS_NAMESPACE=""
+#export ROS_LOCALHOST_ONLY=0
+#export ROS_DISCOVERY_SERVER=""
+#export ROS_IP=130.251.6.121
+export ROS_IP=100.111.179.71 #for using lan
+
+
+export ROS_DOMAIN_ID=0
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+#export FASTRTPS_DEFAULT_PROFILES_FILE=/etc/fast_ts.xml
+

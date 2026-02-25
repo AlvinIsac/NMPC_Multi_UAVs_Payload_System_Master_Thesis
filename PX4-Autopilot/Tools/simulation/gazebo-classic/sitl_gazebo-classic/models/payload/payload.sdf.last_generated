@@ -1,0 +1,295 @@
+<?xml version='1.0' ?>
+<sdf version='1.5'>
+    <model name="payload">
+    <!-- its moment of inertia would be (1/6)*m*l^2 -->
+        <link name='base_link'>
+            <pose>0 0 0 0 0 1.57</pose>
+            <inertial>
+                <mass>1.0</mass>
+                <inertia>
+                    <ixx>0.00426667</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.00426667</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.00426667</izz>
+                </inertia>
+            </inertial>
+            <collision name='base_collision'>
+                <geometry>
+                    <box>
+                        <size>0.16 0.16 0.16</size>
+                    </box>
+                </geometry>
+                <surface>
+                  <friction>
+                    <ode>
+                        <mu>0.19</mu>
+                        <mu2>0.19</mu2>
+                    </ode>
+                  </friction>
+                </surface>
+            </collision>
+            <visual name='base_visual'>
+                <geometry>
+                    <box>
+                        <size>0.16 0.16 0.16</size>
+                    </box>
+                    <mesh>
+                        <uri>model://Box/meshes/Box.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+	
+        <!--///////////////////////////////////////////////////////////////////-->
+        
+        <link name='payload_cylinder_1'>
+            <pose>-0.04 0 0.085 0 1.57 0</pose>
+            <inertial>
+                <mass>0.00714285</mass>
+                <inertia>
+                    <ixx>0.00000595</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00000595</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00000595</izz>
+                </inertia>
+            </inertial>
+
+            <collision name='payload_cylinder_inertia_collision_1'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.025</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             		     <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+	                 <ode>
+	                     <mu>0.2</mu>
+	                     <mu2>0.2</mu2>
+	                 </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='payload_cylinder_inertia_visual_1'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.05</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+        <static>false</static>
+        
+        
+        
+        <link name='payload_cylinder_2'>
+            <pose>0.02 -0.0346 0.085 4.18667 1.57 0</pose>
+            <inertial>
+                <mass>0.00714285</mass>
+                <inertia>
+                    <ixx>0.00000595</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00000595</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00000595</izz>
+                </inertia>
+            </inertial>
+
+            <collision name='payload_cylinder_inertia_collision_2'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.025</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             		     <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+	                 <ode>
+	                     <mu>0.2</mu>
+	                     <mu2>0.2</mu2>
+	                 </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='payload_cylinder_inertia_visual_2'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.05</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+        <static>false</static>
+        
+         
+        <link name='payload_cylinder_3'>
+            <pose>0.02 0.0346 0.085 2.09333 1.57 0</pose>
+            <inertial>
+                <mass>0.00714285</mass>
+                <inertia>
+                    <ixx>0.00000595</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00000595</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00000595</izz>
+                </inertia>
+            </inertial>
+
+            <collision name='payload_cylinder_inertia_collision_3'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.025</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             		     <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+	                 <ode>
+	                     <mu>0.2</mu>
+	                     <mu2>0.2</mu2>
+	                 </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='payload_cylinder_inertia_visual_3'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.05</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+        <static>false</static>
+        
+         
+        <!--<link name='payload_cylinder_4'>
+            <pose>0 0.057 0.085 1.57 1.57 0</pose>
+            <inertial>
+                <mass>0.00714285</mass>
+                <inertia>
+                    <ixx>0.00000595</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.00000595</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.00000595</izz>
+                </inertia>
+            </inertial>
+
+            <collision name='payload_cylinder_inertia_collision_4'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.025</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <contact>
+                        <ode>
+             		     <min_depth>0.001</min_depth>
+                            <max_vel>0</max_vel>
+                        </ode>
+                    </contact>
+                    <friction>
+	                 <ode>
+	                     <mu>0.2</mu>
+	                     <mu2>0.2</mu2>
+	                 </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='payload_cylinder_inertia_visual_4'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.005</radius>
+                        <length>0.05</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Grey</name>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                    </script>
+                </material>
+            </visual>
+            <gravity>1</gravity>
+        </link>
+        <static>false</static>-->
+        
+        <!--///////////////////////////////////////////////////////////////-->
+        
+        <joint name='rod_joint_1' type='fixed'>
+            <child>payload_cylinder_1</child>
+            <parent>base_link</parent>
+        </joint>
+        
+        <joint name='rod_joint_2' type='fixed'>
+            <child>payload_cylinder_2</child>
+            <parent>base_link</parent>
+        </joint>
+        
+        <joint name='rod_joint_3' type='fixed'>
+            <child>payload_cylinder_3</child>
+            <parent>base_link</parent>
+        </joint>
+        
+        <!--<joint name='rod_joint_4' type='fixed'>
+            <child>payload_cylinder_4</child>
+            <parent>base_link</parent>
+        </joint>-->
+        
+    </model>
+</sdf>

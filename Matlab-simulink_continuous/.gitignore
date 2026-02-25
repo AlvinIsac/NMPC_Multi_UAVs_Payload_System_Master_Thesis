@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# MATLAB
+*.asv
+*.autosave
+
+# Simulink auto-generated stuff
+slprj/
+sfprj/
+*_sfprj/
+*_jitprj/
+*.slxc
+*.mexw64
+*.mexa64
+*.mexmaci64
+*.mexmac
+
+# Code generation
+codegen/
+html/
+
+# MATLAB Project files
+*.prj
+resources/
+
+# Cache files
+*.mat~
